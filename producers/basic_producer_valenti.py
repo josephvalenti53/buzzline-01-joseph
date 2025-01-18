@@ -59,7 +59,7 @@ def get_message_interval() -> int:
 #####################################
 
 # Define some lists for generating buzz messages
-ADJECTIVES: list = ["extremely disatisfied", "disastisfied", "neutral", "satisfied", "extremely satisfied"]
+ADJECTIVES: list = ["extremely dissatisfied", "dissastisfied", "neutral", "satisfied", "extremely satisfied"]
 ACTIONS: list = ["the Critter Cafe", "the Giftshop", "the Waterpark", "the Northerlights Arcade"]
 TOPICS: list = ["cleanliness", "friendliness", "helpfulness", "quickness"]
 
@@ -83,7 +83,7 @@ def generate_messages():
         adjective = random.choice(ADJECTIVES)
         action = random.choice(ACTIONS)
         topic = random.choice(TOPICS)
-        yield f"I just stayed at the Great Wolf Lodge and feel {adjective} with the {topic} of {action}. 
+        yield f"I just stayed at the Great Wolf Lodge and feel {adjective} with the {topic} of {action}."
 
 
 #####################################
