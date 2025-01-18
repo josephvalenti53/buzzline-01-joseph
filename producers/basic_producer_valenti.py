@@ -48,25 +48,23 @@ def get_message_interval() -> int:
     To use handy functions like this, import the os module 
     from the Python Standard Library (see above).
     """
-    return_value: str = os.getenv("MESSAGE_INTERVAL_SECONDS", 3)
-    interval: int = int(return_value)
-    logger.info(f"Messages will be sent every {interval} seconds.")
-    return interval
-
+    # Get message interval from the environment and ensure it's an integer
+    return_value: int = int(os.getenv("MESSAGE_INTERVAL_SECONDS", 3))  # Default to 3 if the variable isn't found
+    logger.info(f"Messages will be sent every {return_value} seconds.")
+    return return_value
 
 #####################################
 # Define global variables
 #####################################
 
 # Define some lists for generating buzz messages
-ADJECTIVES: list = ["extremely dissatisfied", "dissastisfied", "neutral", "satisfied", "extremely satisfied"]
-ACTIONS: list = ["the Critter Cafe", "the Giftshop", "the Waterpark", "the Northerlights Arcade"]
+ADJECTIVES: list = ["extremely dissatisfied", "dissatisfied", "neutral", "satisfied", "extremely satisfied"]
+ACTIONS: list = ["the Critter Cafe", "the Giftshop", "the Waterpark", "the Northern Lights Arcade"]
 TOPICS: list = ["cleanliness", "friendliness", "helpfulness", "quickness"]
 
 #####################################
 # Define a function to generate buzz messages
 #####################################
-
 
 def generate_messages():
     """
@@ -90,7 +88,6 @@ def generate_messages():
 # Define main() function to run this producer.
 #####################################
 
-
 def main() -> None:
     """
     Main entry point for this producer.
@@ -102,7 +99,6 @@ def main() -> None:
     This is a multiline docstring - a special type of comment 
     that explains what the function does.
     """
-
     logger.info("START producer...")
     logger.info("Hit CTRL c (or CMD c) to close.")
     
@@ -118,7 +114,6 @@ def main() -> None:
 
     logger.info("NOTE: See the `logs` folder to learn more.")
     logger.info("END producer.....")
-
 
 #####################################
 # Conditional Execution
